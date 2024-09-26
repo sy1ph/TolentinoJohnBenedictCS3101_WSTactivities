@@ -10,61 +10,99 @@
     font-weight: 400;
 }
 
-.material-symbols-rounded {
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 300,
-    'GRAD' 200,
-    'opsz' 24
-  }
+*{
+    cursor: default;
+}
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #062d58;
-    font-family: Arial, sans-serif;
+body{
+    background-color: #061740;
+    align-content: center;
 }
 
 h1{
-    position: absolute;
+    color: azure;
     font-family: 'Amsterdam Four';
-    font-size: 3em;
-    color: aliceblue;
-    transform: translateY(-30vh);
+    font-size: 3.2em;
+    font-weight: 400;
+    text-align: center;
 }
 
-.container {
+.container{
+    justify-content: center;
     display: flex;
-    gap: 20px;
+    flex-direction: row;
 }
 
-.flex-box {
-    background-color: white;
-    border-radius: 8px;
-    padding: 20px;
-    width: 300px;
-    color: #062d58;
-    height: 200px;
+.flex-box{
+    height: 40vh;
+    width: 25vw;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: azure;
 }
 
-.flex-box h2 {
+.header h2{
     font-family: 'Kitsch';
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 20px;
+    font-size: 2em;
+    font-weight: 500;
 }
 
-.flex-box p {
-    font-size: 14px;
-    line-height: 1.5;
+.icon, .header h2, .details p{
     margin: 0;
+    padding: 0;
 }
 
-.icon{
-    text-align: center;
-    margin: 0;
+.details p{
+    color:#061740;
+    font-family: 'Alata';
+    font-weight: 100;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 10px;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    transition: 0.4s ease;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 0.4s ease;
+    height: 0%;
+    opacity: 0%;
+    flex-wrap: nowrap;
+    visibility: hidden;
+}
+
+.flex-box:hover .header{
+    opacity: 0%;
+    height: 0%;
+    visibility: hidden;
+}
+
+.flex-box:hover .details{
+    height: 100%;
+    opacity: 100%;
+    visibility: visible;
+}
+
+@media (max-width: 786px){
+
+    .container{
+        flex-direction: column;
+    }
+    
+    .flex-box{
+        height: 30vh;
+        width: 80vw;
+    }
 }
