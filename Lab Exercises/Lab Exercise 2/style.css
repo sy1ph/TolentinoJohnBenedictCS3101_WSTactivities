@@ -20,11 +20,12 @@ body{
 }
 
 h1{
-    color: azure;
+    color: #f0ffff;
     font-family: 'Amsterdam Four';
     font-size: 3.2em;
     font-weight: 400;
     text-align: center;
+    animation: enter-reverse 0.5s ease-out;
 }
 
 .container{
@@ -39,7 +40,8 @@ h1{
     padding: 10px;
     margin: 10px;
     border-radius: 10px;
-    background-color: azure;
+    background-color: #f0ffff;
+    animation: enter 0.5s ease-out;
 }
 
 .header h2{
@@ -95,6 +97,27 @@ h1{
     visibility: visible;
 }
 
+@keyframes enter{
+    0%{
+        transform: translateY(30%);
+        opacity: 0;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+
+@keyframes enter-reverse{
+    0%{
+        transform: translateY(-30%);
+        opacity: 0;
+    }
+    100%{
+        opacity: 100%;
+    }
+
+}
+
 @media (max-width: 786px){
 
     .container{
@@ -104,5 +127,11 @@ h1{
     .flex-box{
         height: 30vh;
         width: 80vw;
+    }
+}
+
+@media (max-width: 1200px){
+    .header h2{
+        text-align: center;
     }
 }
